@@ -1,0 +1,41 @@
+<div class="row" style="padding-top: 20px;margin-bottom: -20px;">
+      
+      <div class="col-sm-12 col-md-6 col-lg-6 pic-left">
+        <div class="swiper-container bannerbox">
+          <div class="swiper-wrapper">
+          <stl:contents channelIndex="头条聚焦" isHot="true" totalNum="5">
+            <div class="swiper-slide banlist"> <img src="{Content.ImageUrl}" onClick="window.location.href='{Content.NavigationUrl}'" alt="{Content.Title}"/> </div>
+          </stl:contents>
+          </div>
+          <div class="swiper-pagination bannav"></div>
+          <div class="swiper-button-next banleft"><i class="iconfont icon-gengduo bannerjb"></i></div>
+          <div class="swiper-button-prev banright"><i class="iconfont icon-fanhui bannerjb"></i></div>
+        </div>
+      </div>
+      
+
+      	<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 pic-mid">
+        <ul>
+        <stl:contents channelIndex="头条聚焦" totalNum="2" isRecommend="true">
+          <li><stl:a> <img src="{Content.ImageUrl}" alt="{Content.Title}"/>
+            <div class="pic-title">
+              <h4><stl:content type="Title" wordNum="13" ellipsis="..."></stl:content></h4>
+            </div>
+            </stl:a></li>
+        </stl:contents>
+        </ul>
+      </div>
+
+      	<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 pic-right">
+        <ul>
+        <stl:contents channelIndex="头条聚焦" startNum="3" totalNum="2" isRecommend="true">
+          <li><stl:a> <img src="{Content.ImageUrl}" alt="{Content.Title}"/>
+            <div class="pic-title">
+              <h4><stl:content type="Title" wordNum="13" ellipsis="..."></stl:content></h4>
+            </div>
+            </stl:a></li>
+          </stl:contents>
+        </ul>
+      </div>
+
+    </div>

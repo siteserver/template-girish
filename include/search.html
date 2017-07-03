@@ -1,0 +1,18 @@
+<div class="search-box " id="search-box"> <i class="icon icon-search-close js-show-search-box"></i>
+  <div class="search-content overlay-dialog-animate">
+    <div class="search-input">
+      <form id="search-input" role="search" method="get" action="{Stl.SiteUrl}/utils/search.html" onSubmit="return checkinput()">
+        <button type="submit"></button>
+        <input placeholder="请输入关键字，按回车键搜索" name="word" id="search-input">
+        <input type="hidden" name="type" value="Title" id="search-input"/>
+      </form>
+    </div>
+    <div class="search-history search-hot"> <span>热搜词</span>
+      <ul>
+      <stl:tags context="Channel" totalNum="8" tagLevel="2" theme="Style1">
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-263"><stl:a href="{Stl.SiteUrl}/utils/tags.html?tagName={Tag.Name}">{Tag.Name}</stl:a></li>
+      </stl:tags>
+      </ul>
+    </div>
+  </div>
+</div>

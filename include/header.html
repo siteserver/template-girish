@@ -1,0 +1,45 @@
+<div id="top_nav" class="header yapiskan">
+  <div class="container">
+    <div class="row">
+      <div class="top-bar mnav">
+        <button class="navbar-toggle js-open-nav" type="button">
+        <div class="icon-bar"> </div>
+        <div class="icon-bar"> </div>
+        <div class="icon-bar"> </div>
+        </button>
+      </div>
+      <div class="logo mnav"> <a href="{stl.siteurl}/"> {stl:value type=Logo} </a> </div>
+      <div class="pull-right mnav"> <i class="icon icon-search" id="msearch"></i> </div>
+      <div class="nav-left" id="nav">
+        
+        <ul class="nav-menu clearfix">
+        <stl:channels topLevel="0" groupChannel="nav">
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29">
+          <stl:a>{Channel.Title} 
+          <span class="caret"></span>
+          </stl:a>
+            <ul class="sub-menu">
+            <stl:channels>
+              <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11"><stl:a>{Channel.Title}</stl:a></li>
+            </stl:channels>
+            </ul>
+          
+          </li>
+        </stl:channels>
+        </ul>
+        
+      </div>
+      <div class="nav-right">
+        <ul class="clearfix">
+          <li class="wx-li">
+            <div class="wx-pic"> {stl:value type=weixin alt=微信服务号}
+              <div class="wx-text"> <span>微信扫一扫</span> </div>
+            </div>
+            <i class="icon wx-icon"></i><span>微信</span><em class="guide-prompt" style="display: none;"></em> </li>
+          <li class="search-li"><i class="icon icon-search "></i><span>搜索</span></li>
+          <li class="login-li"><a href="{stl.LoginUrl}" target="_blank" title="登录网站">登录</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

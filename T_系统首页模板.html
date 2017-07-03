@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+{Stl.SiteName}
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="{Stl.SiteUrl}/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+<link href="{Stl.SiteUrl}/css/iconfont.css" type="text/css" rel="stylesheet"/>
+<link href="{Stl.SiteUrl}/css/common.css" type="text/css" rel="stylesheet"/>
+<link href="{Stl.SiteUrl}/css/swiper.min.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="{Stl.SiteUrl}/js/jquery.min.js"></script>
+<script type="text/javascript" src="{Stl.SiteUrl}/js/swiper.min.js"></script>
+<script type="text/javascript" src="{Stl.SiteUrl}/js/js.js"></script>
+
+<link rel='stylesheet' id='style-css'  href='{stl.siteurl}/css/style.css' type='text/css' media='all' />
+</head>
+<body class="home blog">
+
+
+<stl:include file="/include/search.html"></stl:include>
+
+
+
+<stl:include file="/include/header.html"></stl:include>
+<div id="top-pic">
+  <div class="container">
+    <stl:include file="/include/contop.html"></stl:include>
+    <div class="row" style="padding-top: 20px;"> 
+      <!--adv01 -->
+      <stl:include file="/include/adv.html"></stl:include>
+    </div>
+  </div>
+</div>
+
+<!--主要内容 -->
+<div id="cont-list">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-8 cont-left">
+        <div id="hour24" class="clearfix">
+          <div class="hour24-title">
+            <h3>科技动态</h3>
+          </div>
+          
+          <div class="col-sm-12 col-md-6 col-lg-6 hour24-left">
+          <stl:contents channelIndex="科技动态" isHot="true" totalNum="1" order="AddDate">
+            <div class="hour24-left-img"> <stl:a title="{Content.Title}" target="_blank"> <img src="{Content.ImageUrl}" alt="{Content.Title}"/> </stl:a> </div>
+            <h3 class="htitle-color" style="font-weight: 400;"><stl:a><stl:content type="Title" wordNum="17" ellipsis="..."></stl:content></stl:a></h3>
+            <div class="mob-author">   
+            <span class="time"><i class="iconfont icon-shijian"></i>  <stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></span>   
+            <span class="time liulan"><i class="iconfont icon-faxian"></i> <stl:content type="Source"></stl:content></span>
+            </div>
+            <div class="mob-sub"> <stl:content type="Content" isClearTags="true" wordNum="50" ellipsis="..."></stl:content> </div>
+          </stl:contents>
+          </div>
+          
+          <stl:contents channelIndex="科技动态" isRecommend="true" totalNum="4" order="AddDate">
+            <div class="col-sm-12 col-md-6 col-lg-6 hour24-right">
+            <ul>
+              <li class="clearfix"> <stl:a title="{Content.Title}" target="_blank">
+                <div class="h24-r-img"> <img src="{Content.ImageUrl}" alt="{Content.Title}"/> </div>
+                </stl:a>
+                <div class="h24-r-text"> <stl:a title="{Content.Title}" target="_blank"> <span class="h24-r-title"><stl:content type="Title" wordNum="28" ellipsis="..."></stl:content></span> </stl:a>
+                  <p class="mob-author"> <span class="time"><i class="iconfont icon-shijian"></i> <stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></span>   <span class="time"><i class="iconfont icon-faxian"></i> <stl:content type="Source"></stl:content></span></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          </stl:contents>
+        </div>
+        <!--adv02 -->
+        <div id="adv02" style="margin-top: 20px;"> <a>{stl:value type=conadv}</a></div>
+        <!--最新文章 -->
+        <div class="la-title">
+          <h3>最新文章</h3>
+        </div>
+        
+        <stl:pageContents topLevel="0" groupChannelNot="not" scope="All" pageNum="20" order="AddDate">
+        <stl:if type="ImageUrl" operate="NotEmpty">
+            <stl:yes>
+                <stl:if type="SubTitle" operate="Equals" value="3">
+                  <stl:yes>
+                    <div class="la-list01 line-botm">
+                                <div class="la-list-t">
+                                  <h3> 
+                                  <stl:if type="IsHot" operate="Equals" value="true">
+                                  <span class="hot-icon">热</span> 
+                                  </stl:if>
+                                  <stl:a class="htitle-color" target="_blank"><stl:content type="Title"></stl:content></stl:a> </h3>
+                                </div>
+                                <div class="mob-author">
+                                    <span class="time"><i class="iconfont icon-mulutubiao"></i>
+                                    <stl:a href="" style="color: #bbb;">{Channel.Title}</stl:a>      
+                                    </span>
+                                    <span class="time"><i class="iconfont icon-shijian"></i> <stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></span>
+                                    <span class="time liulan"><i class="iconfont icon-faxian"></i> <stl:content type="Source"></stl:content></span>
+                                    <span class="time tags"><i class="iconfont icon-biaoqian"></i>
+                                    <stl:tags totalNum="3">
+                                    <a href="{Stl.SiteUrl}/utils/tags.html?tagName={Tag.Name}" rel="tag">{Tag.Name}</a>
+                                    </stl:tags>
+                                    </span>
+                                </div>
+                                
+                                <ul class="clearfix">
+                                <stl:each type="property" value="ImageUrl">
+                                  <li>
+                                    <div class="image-item"> <stl:a> <img class="xyscale" src="{Content.ImageUrl}" alt="{Content.Title}"> </stl:a> </div>
+                                  </li>
+                                </stl:each>
+                                </ul>
+                                <div class="mob-sub"> <stl:content type="Summary" wordNum="95" ellipsis="..."></stl:content> </div>
+                              </div>
+                  </stl:yes>
+                  <stl:no>
+                    <div class="la-list02 line-botm clearfix">
+  <div class="la-l-img"> <stl:a target="_blank"> <img class="xyscale" src="{Content.ImageUrl}" alt="{Content.Title}"> </stl:a> </div>
+  <div class="la-r-text">
+    <h3> <stl:a class="htitle-color" target="_blank"><stl:content type="Title"></stl:content></stl:a> </h3>
+    <div class="mob-author"> <span class="time"><i class="iconfont icon-mulutubiao"></i> <stl:a href="" style="color: #bbb;">
+      {Channel.Title}
+      </stl:a> </span> <span class="time"><i class="iconfont icon-shijian"></i> <stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></span> <span class="time liulan"><i class="iconfont icon-faxian"></i> <stl:content type="Source"></stl:content></span> </div>
+    <div class="mob-sub"> <stl:content type="Summary" wordNum="62" ellipsis="..."></stl:content> </div>
+    <div class="tags">
+          <i class="iconfont icon-biaoqian"></i>    
+                    <stl:tags totalNum="3">
+                        <a href="{Stl.SiteUrl}/utils/tags.html?tagName={Tag.Name}" rel="tag">{Tag.Name}</a>
+                        </stl:tags>
+                    </div>
+  </div>
+</div>
+                  </stl:no>
+                </stl:if>
+            </stl:yes>
+            <stl:no>
+                <div class="la-list03 line-botm clearfix">
+                  
+                  <div class="la-r-text">
+                    <h3> 
+                    
+                    <stl:if type="IsHot" operate="Equals" value="true">
+                      <span class="hot-icon">热</span> 
+                    </stl:if>
+                      
+                     <stl:a class="htitle-color" target="_blank"><stl:content type="Title"></stl:content></stl:a> </h3>
+                    <div class="mob-author">
+                        <span class="time"><i class="iconfont icon-mulutubiao"></i>
+                        <stl:a href="" style="color: #bbb;">{Channel.Title}</stl:a>      
+                        </span>
+                        <span class="time"><i class="iconfont icon-shijian"></i> <stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></span>
+                        <span class="time liulan"><i class="iconfont icon-faxian"></i> <stl:content type="Source"></stl:content></span>
+                        
+                    </div>
+                    <div class="mob-sub"><stl:content type="Summary" wordNum="100" ellipsis="..."></stl:content></div>
+                    <div class="tags">
+          <i class="iconfont icon-biaoqian"></i>    
+                    <stl:tags totalNum="3">
+                        <a href="{Stl.SiteUrl}/utils/tags.html?tagName={Tag.Name}" rel="tag">{Tag.Name}</a>
+                        </stl:tags>
+                    </div>
+                  </div>
+                </div>
+            </stl:no>
+        </stl:if>
+        </stl:pageContents>
+        
+        
+          <div id="page"> <stl:pageItem type="PreviousPage">
+            <stl:yes>
+              <a href="{Current.Url}" style="background:#3CA5F6;">上一页</a>
+            </stl:yes>
+            <stl:no>
+              <a href="javascript:;">上一页</a>
+            </stl:no>
+            </stl:pageItem>
+            
+            <stl:pageItem type="PageNavigation" listNum="5">
+              <stl:yes>
+                <a href="{Current.Url}">{Current.Num}</a>
+              </stl:yes>
+            <stl:no>
+              <span id="page-numberscurrent">{Current.Num}</span> 
+            </stl:no>
+            </stl:pageItem>
+            
+            <stl:pageItem type="NextPage">
+              <stl:yes>
+                <a href="{Current.Url}" style="background:#3CA5F6;">下一页</a>
+              </stl:yes>
+              <stl:no>
+                <a href="javascript:;">下一页</a>
+              </stl:no>
+            </stl:pageItem>
+          </div>
+
+        
+        
+        
+      </div>
+      <div class="wrap-right pull-right">
+        <stl:include file="/include/hot.html"></stl:include>
+        <div class="widget widget_ztmao_mostviews">
+          <div class="box-moder hot-article">
+            <h3>最热点击文章</h3>
+          </div>
+          <div class="box-moder hot-article"> <span class="span-mark"></span>
+            <ul class="hots-post-widget">
+            <stl:contents scope="All" groupChannelNot="not" isImage="true" topLevel="0" order="Hits" totalNum="13">
+              <li>
+                <div class="hot-article-img"> <stl:a target="_blank"> <img class="xyscale" src="{Content.ImageUrl}" alt="{Content.Title}"/> </stl:a> </div>
+                <stl:a class="transition" target="_blank"><stl:content type="Title"></stl:content></stl:a> </li>
+            </stl:contents>
+            </ul>
+          </div>
+          <div class="placeholder"></div>
+        </div>
+        <div class="box-moder hot-tag ztmao-lianjie">
+          <h3>友情链接</h3>
+          <span class="span-mark"></span>
+          <div class="search-history search-hot">
+            <ul>
+            <stl:contents channelIndex="友情链接">
+              <li><a href="{Content.LinkUrl}" target="_blank">{Content.Title}</a></li>
+            </stl:contents>
+            </ul>
+          </div>
+        </div>
+        <div class="placeholder"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--底部 -->
+<stl:include file="/include/footer.html"></stl:include>
+<script src="{Stl.SiteUrl}/js/glodil.js" type="text/javascript"></script> 
+<script src="{Stl.SiteUrl}/js/jquery-ias.min.js" type="text/javascript"></script> 
+
+<script type="text/javascript">
+  $('.weixin').mouseover(function(){
+  $('.weixin-Qr-code').css({"opacity":"1","margin-left":"70px","display":"block"}),
+  $('.weixin').addClass('disabled')
+    // alert('fdafdsa');
+    });
+    $('.weixin').mouseout(function(){
+  $('.weixin-Qr-code').css({"opacity":"1","margin-left":"70px","display":"none"}),
+  $('.weixin').removeClass('disabled')
+  // alert('fdafdsa');
+  });
+</script> 
+<script type='text/javascript' src='{Stl.SiteUrl}/js/wp-embed.min.js'></script>
+</body>
+</html>
